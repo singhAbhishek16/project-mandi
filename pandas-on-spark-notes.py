@@ -82,6 +82,14 @@ def format_row(row):
 ps_df["name_with_age"] = ps_df.apply(format_row, axis=1)
 
 '''
+note for understanding-
+- agar column pe operate karna hai
+-- dataframe["column-name"].apply(function-name) (yaha apply ko bas ek column pe lagaya hai; mtlb uss column ka ek ek row function ko input jayega (essentially each element)
+- agar row pe operate karna hai
+-- dataframe.apply(function-name) (notice ki poora dataframe paas hua hai apply() ko; mtlb yaha ek ek karke poora row input hoga apply ke andar wale function ko)
+'''
+
+'''
 G. filtering on a columns logic
 '''
 filtered_ps_df = ps_df[ps_df["age"] > 30]
