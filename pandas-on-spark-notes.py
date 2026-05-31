@@ -95,8 +95,17 @@ G. filtering on a columns logic
 filtered_ps_df = ps_df[ps_df["age"] > 30]
 filtered_spark_df = spark_df.filter(spark_df.age > 30)
 
+
 '''
-H. convertion. spark wale ke liye spark_df.show(); pandas-on-spark ke liye sedha print()
+H. updating some values in a column based on external logic
+         data['Brand']                        -> ye brand wale column de dega
+         data['Brand']=='Tata'                -> ye true/false ki series de dega
+data.loc[data['Brand']=='Tata']               -> ye 'tata' wale rows nikal kar de dega
+data.loc[data['Brand']=='Tata', 'Mileage']=50 -> ye 'tata' wale rows ke 'Milege' values ko update kar dega
+'''
+
+'''
+I. convertion. spark wale ke liye spark_df.show(); pandas-on-spark ke liye sedha print()
 '''
 spark_df = spark.createDataFrame(pandas_df)
 ps_df = ps.DataFrame(pandas_df)
