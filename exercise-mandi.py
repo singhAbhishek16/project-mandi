@@ -106,10 +106,11 @@ ps_df_cleanup = ps_df_cleanup[
         (ps_df_cleanup['Modal_Price'] == 0.0)
     )
 ]
-print(f'\nnumber of rows with after dropping values where all three prices were 0: {new_ps_df_cleanup.shape}')
+print(f'\nnumber of rows with after dropping values where all three prices were 0: {ps_df_cleanup.shape}')
 
 
 # ps_df_cleanup.loc[ps_df_cleanup['Min_Price']==0.0, 'Min_Price'] = 9.27
+# ps_df_cleanup.loc[ps_df_cleanup['Max_Price'] == 0.0, 'Max_Price'] = ps_df_cleanup[['Min_Price', 'Modal_Price']].min(axis=1)
 # new_min_0 = ps_df_cleanup[ps_df_cleanup['Min_Price']==9.27]
 # print(f'rows with min price as 0:\n{new_min_0}')
 
